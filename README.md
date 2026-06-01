@@ -1,3 +1,4 @@
+
 # Motor de Videojuegos 2D - Pixel Quest Engine
 
 ## 1. Título y Temática Elegida
@@ -56,22 +57,20 @@ classDiagram
     EntidadVideojuego <|-- Jugador
     EntidadVideojuego <|-- Enemigo
     MotorJuego --> EntidadVideojuego : Contiene
+``` 
 
-    EntidadVideojuego <|-- Jugador
-    EntidadVideojuego <|-- Enemigo
-    MotorJuego --> EntidadVideojuego : Contiene
-
-
-    graph LR
+## 4. Diagrama de Casos de Uso UML
+```mermaid <--- ESTO ABRE EL NUEVO DIAGRAMA DE CASOS DE USO
+graph LR
     Jugador((Actor: Jugador))
     CU01[CU-01: Iniciar Partida]
     CU02[CU-02: Mover Entidad]
     
     Jugador --> CU01
     Jugador --> CU02
+``` 
 
-
-    ## 5. Especificación de Casos de Uso
+## 5. Especificación de Casos de Uso
 
 | Campo | Descripción |
 | :--- | :--- |
@@ -97,17 +96,19 @@ classDiagram
 | **Postcondiciones** | Las coordenadas del jugador varían en memoria de forma inmediata. |
 | **Reglas de Negocio** | Cada comando desplaza a la entidad exactamente un delta de traslación de 5 unidades. |
 
+
 ## 6. Bitácora del Uso de IA
+Herramienta utilizada y rol
+Se utilizó Gemini configurado bajo el rol de Asistente Experto en Arquitectura de Videojuegos y Gestión de Repositorios con Git-Flow.
 
-### Herramienta utilizada y rol
-Se utilizó **Gemini** configurado bajo el rol de *Asistente Experto en Arquitectura de Videojuegos y Gestión de Repositorios con Git-Flow*.
+Muestra de Prompts
+"Escribe una estructura abstracta EntidadVideojuego con coordenadas espaciales x, y, w, h en Java y una subclase Jugador que herede de ella."
 
-### Muestra de Prompts
-1. *"Escribe una estructura abstracta EntidadVideojuego con coordenadas espaciales x, y, w, h en Java y una subclase Jugador que herede de ella."*
-2. *"Genera un algoritmo matemático puro AABB para detectar si dos entidades rectangulares se están solapando usando operadores condicionales lógicos."*
+"Genera un algoritmo matemático puro AABB para detectar si dos entidades rectangulares se están solapando usando operadores condicionales lógicos."
 
-### Control de Errores de la IA
-La IA inicialmente intentó importar la librería gráfica `java.awt.Rectangle` para resolver las colisiones mediante el método estructurado `.intersects()`. Se le corrigió manualmente exigiéndole que utilizara únicamente lógica matemática nativa con operadores condicionales sobre variables primitivas enteras, cumpliendo así la restricción estricta de evitar cualquier interfaz o librería gráfica externa dentro del motor lógico.
+Control de Errores de la IA
+La IA inicialmente intentó importar la librería gráfica java.awt.Rectangle para resolver las colisiones mediante el método estructurado .intersects(). Se le corrigió manualmente exigiéndole que utilizara únicamente lógica matemática nativa con operadores condicionales sobre variables primitivas enteras, cumpliendo así la restricción estricta de evitar cualquier interfaz o librería gráfica externa dentro del motor lógico.
 
-### Reflexión Crítica
-El uso de asistentes de IA permite agilizar enormemente la generación de código base redundante (*boilerplate*) y optimiza el formateo de documentación compleja como tablas Markdown y código sintáctico de Mermaid. Sin embargo, bajo presión de tiempo existe el peligro de aceptar código con dependencias innecesarias o sobre-ingeniería que rompa las restricciones impuestas de las guías de entrega. El criterio técnico del programador es vital para filtrar las soluciones.
+Reflexión Crítica
+El uso de asistentes de IA permite agilizar enormemente la generación de código base redundante (boilerplate) y optimiza el formateo de documentación compleja como tablas Markdown y código sintáctico de Mermaid. Sin embargo, bajo presión de tiempo existe el peligro de aceptar código con dependencias innecesarias o sobre-ingeniería que rompa las restricciones impuestas de las guías de entrega. El criterio técnico del programador es vital para filtrar las soluciones.
+
