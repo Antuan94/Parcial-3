@@ -112,3 +112,5 @@ La IA inicialmente intentó importar la librería gráfica java.awt.Rectangle pa
 Reflexión Crítica
 El uso de asistentes de IA permite agilizar enormemente la generación de código base redundante (boilerplate) y optimiza el formateo de documentación compleja como tablas Markdown y código sintáctico de Mermaid. Sin embargo, bajo presión de tiempo existe el peligro de aceptar código con dependencias innecesarias o sobre-ingeniería que rompa las restricciones impuestas de las guías de entrega. El criterio técnico del programador es vital para filtrar las soluciones.
 
+![Evidencia de Ejecución](Imagen1.png)
+![Evidencia de Ejecución](Imagen2.png)
